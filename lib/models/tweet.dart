@@ -8,7 +8,7 @@ class Tweet {
   final int retweets;
   final int comments;
   final int views;
-  final String time; // Nueva propiedad para el tiempo
+  final String time; 
   final bool isSaved;
 
   Tweet({
@@ -21,7 +21,7 @@ class Tweet {
     required this.retweets,
     required this.comments,
     required this.views,
-    required this.time, // Se agrega como requerido
+    required this.time, 
     this.isSaved = false,
   });
 }

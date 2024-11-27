@@ -5,6 +5,7 @@ class BottomNavBar extends StatelessWidget {
   final int currentIndex;
 
   const BottomNavBar({
+    super.key,
     required this.onTap,
     required this.currentIndex,
   });
@@ -13,13 +14,13 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       onTap: onTap,
-      currentIndex: currentIndex, // Indica cuál pestaña está activa
-      type: BottomNavigationBarType.fixed, // Mantiene los íconos alineados
-      selectedItemColor: Colors.black, // Color del ícono seleccionado
-      unselectedItemColor: Colors.black54, // Color de íconos no seleccionados
-      showSelectedLabels: false, // Oculta el texto del ítem seleccionado
-      showUnselectedLabels: false, // Oculta el texto del ítem no seleccionado
-      backgroundColor: Colors.white, // Cambia el fondo del BottomNavigationBar a blanco
+      currentIndex: currentIndex, 
+      type: BottomNavigationBarType.fixed, 
+      selectedItemColor: Colors.black, 
+      unselectedItemColor: Colors.black54, 
+      showSelectedLabels: false, 
+      showUnselectedLabels: false, 
+      backgroundColor: Colors.white, 
       items: [
         const BottomNavigationBarItem(
           icon: Icon(Icons.home),
@@ -30,7 +31,7 @@ class BottomNavBar extends StatelessWidget {
           label: 'Search',
         ),
         const BottomNavigationBarItem(
-          icon: Icon(Icons.browser_not_supported, size: 22), // Icono de lápiz
+          icon: Icon(Icons.browser_not_supported, size: 22), 
           label: 'Compose',
         ),
         const BottomNavigationBarItem(
@@ -66,7 +67,7 @@ class BottomNavBar extends StatelessWidget {
           label: 'Notifications',
         ),
         const BottomNavigationBarItem(
-          icon: Icon(Icons.mail), // Icono de la carta
+          icon: Icon(Icons.mail), 
           label: 'Messages',
         ),
       ],

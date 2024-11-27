@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class TopNavigationBar extends StatelessWidget {
-  final int selectedIndex; // Índice de la pestaña activa
-  final Function(int) onTabSelected; // Función para manejar clics en las pestañas
+  final int selectedIndex;
+  final Function(int) onTabSelected;
 
   const TopNavigationBar({
+    super.key,
     required this.selectedIndex,
     required this.onTabSelected,
   });
@@ -34,8 +35,8 @@ class TopNavigationBar extends StatelessWidget {
           ),
         ),
         Container(
-          height: 1, // Altura de la línea gris
-          color: Colors.grey.shade300, // Color de la línea gris
+          height: 1,
+          color: Colors.grey.shade300,
         ),
       ],
     );
@@ -49,7 +50,7 @@ class TopNavigationBar extends StatelessWidget {
     final isSelected = selectedIndex == index;
 
     return GestureDetector(
-      onTap: () => onTabSelected(index), // Llama a la función con el índice de la pestaña
+      onTap: () => onTabSelected(index),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -57,11 +58,13 @@ class TopNavigationBar extends StatelessWidget {
             label,
             style: TextStyle(
               color: isSelected ? Colors.black : Colors.grey,
+              fontSize: isSelected ? 16 : 14, // Cambia el tamaño de la fuente
               fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
             ),
           ),
-          SizedBox(height: 4), // Espacio entre el texto y la barra
-          Container(
+          const SizedBox(height: 4),
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
             height: 2,
             width: 40,
             color: isSelected ? Colors.blue : Colors.transparent,
@@ -71,6 +74,7 @@ class TopNavigationBar extends StatelessWidget {
     );
   }
 }
+
 
 
 

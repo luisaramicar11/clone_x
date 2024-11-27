@@ -4,7 +4,7 @@ import '../models/tweet.dart';
 class TweetCard extends StatelessWidget {
   final Tweet tweet;
 
-  const TweetCard({Key? key, required this.tweet}) : super(key: key);
+  const TweetCard({super.key, required this.tweet});
 
   @override
   Widget build(BuildContext context) {
@@ -13,24 +13,21 @@ class TweetCard extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Colors.white,
         border: Border(
-          bottom: BorderSide(color: Colors.grey, width: 0.5), // Línea inferior
+          bottom: BorderSide(color: Colors.grey, width: 0.5), 
         ),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Avatar
           CircleAvatar(
             radius: 25,
             backgroundImage: NetworkImage(tweet.avatarUrl),
           ),
           const SizedBox(width: 12),
-          // Contenido principal
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Username, handle y tiempo
                 Row(
                   children: [
                     Text(
@@ -45,10 +42,8 @@ class TweetCard extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 4),
-                // Contenido del tweet
                 Text(tweet.content),
                 const SizedBox(height: 8),
-                // Imagen del tweet (si existe)
                 if (tweet.image.isNotEmpty)
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8),
@@ -59,7 +54,6 @@ class TweetCard extends StatelessWidget {
                     ),
                   ),
                 const SizedBox(height: 8),
-                // Iconos de acciones
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -71,7 +65,7 @@ class TweetCard extends StatelessWidget {
                       icon: Icon(
                         tweet.isSaved ? Icons.bookmark : Icons.bookmark_border,
                         color: tweet.isSaved ? Colors.blue : Colors.grey,
-                        size: 20, // Tamaño reducido
+                        size: 20, 
                       ),
                       onPressed: () {},
                     ),
@@ -92,7 +86,7 @@ class TweetCard extends StatelessWidget {
   Widget _buildIconText(IconData icon, int count) {
     return Row(
       children: [
-        Icon(icon, size: 18, color: Colors.grey), // Tamaño reducido
+        Icon(icon, size: 18, color: Colors.grey), 
         const SizedBox(width: 6),
         Text(count.toString(), style: const TextStyle(color: Colors.grey)),
       ],

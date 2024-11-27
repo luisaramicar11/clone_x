@@ -11,7 +11,7 @@ final List<Tweet> mockTweets = [
     retweets: 171,
     comments: 650,
     views: 100, 
-    time: "2h", // Tiempo agregado
+    time: "2h", 
   ),
   Tweet(
     username: "Lila",
@@ -22,8 +22,8 @@ final List<Tweet> mockTweets = [
     likes: 3500,
     retweets: 22,
     comments: 17,
-    views: 4500, // Cantidad de visualizaciones
-    time: "2h", // Tiempo agregado
+    views: 4500, 
+    time: "2h", 
   ),
   Tweet(
     username: "Mariana Montoya",
@@ -35,7 +35,7 @@ final List<Tweet> mockTweets = [
     retweets: 171,
     comments: 650,
     views: 100, 
-    time: "10h", // Tiempo agregado
+    time: "10h", 
   ),
 ];
 
