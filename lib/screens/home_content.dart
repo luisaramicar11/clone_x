@@ -4,19 +4,19 @@ import '../widgets/tweet_card.dart';
 import '../widgets/top_navigation_bar.dart';
 
 class HomeContent extends StatefulWidget {
-  const HomeContent({Key? key}) : super(key: key);
+  const HomeContent({super.key}) ;
 
   @override
   State<HomeContent> createState() => _HomeContentState();
 }
 
 class _HomeContentState extends State<HomeContent> {
-  final PageController _pageController = PageController(); // Controlador de páginas
+  final PageController _pageController = PageController(); 
   int _selectedIndex = 0;
 
   @override
   void dispose() {
-    _pageController.dispose(); // Limpia el controlador al destruir el widget
+    _pageController.dispose(); 
     super.dispose();
   }
 
@@ -85,7 +85,6 @@ class _HomeContentState extends State<HomeContent> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Acción del botón flotante en Home
         },
         backgroundColor: Colors.blue,
         elevation: 2,

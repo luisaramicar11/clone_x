@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           elevation: 0, 
         ),
       ),
-      home: HomeScreen(), 
+      home: const HomeScreen(), 
     );
   }
 }
